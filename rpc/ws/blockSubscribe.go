@@ -17,8 +17,8 @@ package ws
 import (
 	"fmt"
 
-	"github.com/gagliardetto/solana-go"
-	"github.com/gagliardetto/solana-go/rpc"
+	"github.com/dde-group/solana-go"
+	"github.com/dde-group/solana-go/rpc"
 )
 
 type BlockResult struct {

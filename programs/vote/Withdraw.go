@@ -19,9 +19,9 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/dde-group/solana-go"
+	"github.com/dde-group/solana-go/text/format"
 	bin "github.com/gagliardetto/binary"
-	"github.com/gagliardetto/solana-go"
-	"github.com/gagliardetto/solana-go/text/format"
 	"github.com/gagliardetto/treeout"
 )
 

@@ -2,7 +2,7 @@ package rpc
 
 import (
 	"context"
-	"github.com/gagliardetto/solana-go"
+	"github.com/dde-group/solana-go"
 )
 
 type GetParsedBlockOpts struct {
