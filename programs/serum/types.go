@@ -20,9 +20,9 @@ import (
 	"encoding/binary"
 	"encoding/hex"
 	"fmt"
+	"github.com/dde-group/solana-go"
 	"math/big"
 
-	"github.com/dde-group/solana-go"
 	bin "github.com/gagliardetto/binary"
 	"go.uber.org/zap"
 )
@@ -268,20 +268,20 @@ func (o OrderID) SeqNum(side Side) uint64 {
 }
 
 type OpenOrders struct {
-	SerumPadding           [5]byte `json:"-"`
-	AccountFlags           AccountFlag
-	Market                 solana.PublicKey
-	Owner                  solana.PublicKey
+	SerumPadding           [5]byte          `json:"-"`
+	AccountFlags           AccountFlag      `json:"-"`
+	Market                 solana.PublicKey `json:"-"`
+	Owner                  solana.PublicKey `json:"-"`
 	NativeBaseTokenFree    bin.Uint64
 	NativeBaseTokenTotal   bin.Uint64
 	NativeQuoteTokenFree   bin.Uint64
 	NativeQuoteTokenTotal  bin.Uint64
 	FreeSlotBits           bin.Uint128
-	IsBidBits              bin.Uint128 // Bids is 1,  Ask is 0
-	Orders                 [128]OrderID
-	ClientOrderIDs         [128]bin.Uint64
-	ReferrerRebatesAccrued bin.Uint64
-	EndPadding             [7]byte `json:"-"`
+	IsBidBits              bin.Uint128     // Bids is 1,  Ask is 0
+	Orders                 [128]OrderID    `json:"-"`
+	ClientOrderIDs         [128]bin.Uint64 `json:"-"`
+	ReferrerRebatesAccrued bin.Uint64      `json:"-"`
+	EndPadding             [7]byte         `json:"-"`
 }
 
 type Order struct {
