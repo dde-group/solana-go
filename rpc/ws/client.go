@@ -119,8 +119,11 @@ func (c *Client) sendPing() {
 	defer c.lock.Unlock()
 
 	c.conn.SetWriteDeadline(time.Now().Add(writeWait))
+	pingMsg := "{jsonrpc: \"2.0\", method: \"ping\"}"
 	if err := c.conn.WriteMessage(websocket.PingMessage, []byte{}); err != nil {
 		return
+	}
+	if err := c.conn.WriteMessage(websocket.TextMessage, []byte(pingMsg)); err != nil {
 	}
 }
 
